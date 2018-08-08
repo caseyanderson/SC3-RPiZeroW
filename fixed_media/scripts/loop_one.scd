@@ -28,10 +28,11 @@ s.waitForBoot{
 		Out.ar([0, 1], sig);
 	}).add;
 	);
+};
 
-	(
+s.doWhenBooted{
+
 	// run the synth
 
 	~x = Synth(\play, [\amp, 0.9, \buf, ~buf, \trig, 1]);
-	);
 };
