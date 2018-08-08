@@ -20,17 +20,25 @@ s.waitForBoot{
 
 	// the synth
 
-	SynthDef(\play, { | amp = 0.0, trig = 0 |
+	/*SynthDef(\play, { | amp = 0.0, trig = 0 |
 		var env, sig;
 
 		env = EnvGen.kr( Env.asr( 0.0, 0.95, 0.05), trig,  doneAction: 0 );
 		sig = PlayBuf.ar(2, ~buf, BufRateScale.kr(~buf), loop: 1) * env;
+		Out.ar([0, 1], sig);
+	}).add;*/
+
+	SynthDef(\play, { | amp = 0.0, trig = 0, freq = 400 |
+		var env, sig;
+
+		env = EnvGen.kr( Env.asr( 0.0, 0.95, 0.05), trig,  doneAction: 0 );
+		sig = SinOsc.ar(400, 0.0, amp ) * env;
 		Out.ar([0, 1], sig);
 	}).add;
 
 
 	// run the synth
 
-	Synth.new(\play, [\amp, 0.9, \trig, 1]);
+	x = Synth(\play, [\amp, 0.9, \trig, 1]);
 
 };
