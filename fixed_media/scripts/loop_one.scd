@@ -13,11 +13,6 @@ s.latency= 0.05;
 
 s.waitForBoot{
 
-	// setup buffer
-
-	~buf = Buffer.read( s, "/home/pi/frogs.wav");
-
-
 	// the synth
 
 	SynthDef(\play, { | amp = 0.0, buf = 0, trig = 0 |
@@ -29,7 +24,11 @@ s.waitForBoot{
 	}).add;
 
 
+	// setup buffer
+
+	~buf = Buffer.read( s, "/home/pi/frogs.wav");
+
 	// run the synth
 
-	~x = Synth(\play, [\amp, 0.9, \buf, ~buf, \trig, 1]);
+	~x = Synth.new(\play, [\amp, 0.9, \buf, ~buf, \trig, 1]);
 };
