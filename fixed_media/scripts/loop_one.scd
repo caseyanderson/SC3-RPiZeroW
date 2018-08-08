@@ -11,11 +11,13 @@ TODO:
 
 s.waitForBoot{
 
+	(
 	// setup buffer
 
 	~buf = Buffer.read( s, "/home/pi/frogs.wav");
+	);
 
-
+	(
 	// the synth
 
 	SynthDef(\play, {| amp = 0.0, buf = 0, trig = 0 |
@@ -25,15 +27,11 @@ s.waitForBoot{
 		sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf), loop: 1) * env;
 		Out.ar([0, 1], sig);
 	}).add;
+	);
 
-
+	(
 	// run the synth
 
-	x = Synth(\play, [\amp, 0.9, \buf, ~buf, \trig, 0]);
-
-
-	// set the volume
-
-	x.set(\trig, 1);
-
+	~x = Synth(\play, [\amp, 0.9, \buf, ~buf, \trig, 1]);
+	);
 };
