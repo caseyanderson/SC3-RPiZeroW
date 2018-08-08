@@ -11,24 +11,26 @@ TODO:
 
 s.latency= 0.05;
 
-// the synth
-
-SynthDef(\play, { | amp = 0.0, buf = 0, trig = 0 |
-	var env, sig;
-
-	env = EnvGen.kr( Env.asr( 0.0, 0.95, 0.05), trig,  doneAction: 0 );
-	sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf), loop: 1) * env;
-	Out.ar([0, 1], sig);
-}).add;
-
-
 s.waitForBoot{
 
 	// setup buffer
 
 	~buf = Buffer.read( s, "/home/pi/frogs.wav");
 
+
+	// the synth
+
+	SynthDef(\play, { | amp = 0.0, trig = 0 |
+		var env, sig;
+
+		env = EnvGen.kr( Env.asr( 0.0, 0.95, 0.05), trig,  doneAction: 0 );
+		sig = PlayBuf.ar(2, ~buf, BufRateScale.kr(~buf), loop: 1) * env;
+		Out.ar([0, 1], sig);
+	}).add;
+
+
 	// run the synth
 
-	~x = Synth.new(\play, [\amp, 0.9, \buf, ~buf, \trig, 1]);
+	Synth.new(\play, [\amp, 0.9, \trig, 1]);
+
 };
