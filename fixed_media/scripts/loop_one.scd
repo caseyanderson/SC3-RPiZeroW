@@ -13,6 +13,7 @@ s.latency= 0.05;
 
 s.waitForBoot{
 
+(
 	SynthDef(\play, { | amp = 0.0, buf= 0, trig = 0 |
 		var env, sig;
 
@@ -20,8 +21,7 @@ s.waitForBoot{
 		sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf), loop: 1) * env;
 		Out.ar([0, 1], sig);
 	}).add;
-
-
+);
 	// setup buffer
 
 	~buf = Buffer.read( s, "/home/pi/frogs.wav");
