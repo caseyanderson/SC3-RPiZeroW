@@ -8,7 +8,7 @@ s.waitForBoot{
 		var condition;
 		condition = Condition.new;
 
-		SynthDef(\play, { | amp = 0.0, buf= 0, trig = 0 |
+		SynthDef(\play, { | amp = 0.0, buf, trig = 0 |
 			var env, sig;
 			env = EnvGen.kr( Env.asr( 0.0, 0.95, 0.05), trig,  doneAction: 0 );
 			sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf), loop: 1) * env;
@@ -19,7 +19,7 @@ s.sync(condition);
 
 // setup buffer
 
-~buf = Buffer.read( s, "/home/pi/frogs.wav");
+~buf = Buffer.read( s, "/home/pi/supercolliderStandaloneRPI1/frogs_short_test.wav");
 
 s.sync(condition);
 
