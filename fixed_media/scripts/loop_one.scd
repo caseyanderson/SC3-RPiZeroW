@@ -6,7 +6,8 @@ quick and dirty example for looping a sound file forever
 
 TODO:
 * make a way to specify filepath for sample when launching script
-
+* what do i have to do to use symlinks for samples (for example)?
+* protection against loading too big of a sample into the buffer (no earthly idea what this would be like)
 */
 
 s.options.memSize = 8192 * 4; // adjust multiplier to increase memory
@@ -23,11 +24,9 @@ s.waitForBoot{
 		Out.ar(0, sig);
 	}).add;
 
-
 	// setup buffer
 
 	~buf = Buffer.read( s, "/home/pi/samples/frogs_medium.wav");
-
 
 	// wait for sync message from server
 
