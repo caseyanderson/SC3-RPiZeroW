@@ -8,6 +8,18 @@ TODO:
 * make a way to specify filepath for sample when launching script
 
 */
+/*
+loop_one.scd
+Casey Anderson, 2018
+
+quick and dirty example for looping a sound file forever
+
+TODO:
+* make a way to specify filepath for sample when launching script
+
+*/
+
+s.options.memSize = 8192 * 4;
 
 s.latency= 0.05;
 
@@ -21,15 +33,15 @@ s.waitForBoot{
 		Out.ar(0, sig);
 	}).add;
 
-	s.sync;
+
 	// setup buffer
 
-	~buf = Buffer.read( s, "/home/pi/samples/frogs_short_test.wav");
-
-	s.sync;
+	~buf = Buffer.read( s, "/home/pi/samples/frogs_medium.wav");
 
 	// run the synth
-
+	s.sync;
 	Synth.new(\play, [\amp, 0.9, \buf, ~buf, \trig, 1]);
 
+	("PLAYING NOW!").postln;
+	s.options.memSize.postln;
 };
