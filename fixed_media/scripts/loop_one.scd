@@ -8,18 +8,8 @@ TODO:
 * make a way to specify filepath for sample when launching script
 
 */
-/*
-loop_one.scd
-Casey Anderson, 2018
 
-quick and dirty example for looping a sound file forever
-
-TODO:
-* make a way to specify filepath for sample when launching script
-
-*/
-
-s.options.memSize = 8192 * 4;
+s.options.memSize = 8192 * 4; // adjust multiplier to increase memory
 
 s.latency= 0.05;
 
