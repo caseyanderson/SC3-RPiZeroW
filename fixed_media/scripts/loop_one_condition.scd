@@ -1,7 +1,17 @@
+/*
+loop_one.scd
+Casey Anderson, 2018
+
+quick and dirty example for looping a sound file forever
+
+TODO:
+* make a way to specify filepath for sample when launching script
+
+*/
+
 (
 
 s.latency= 0.05;
-s.boot;
 
 s.waitForBoot{
 	Routine.run({
@@ -10,10 +20,9 @@ s.waitForBoot{
 
 		SynthDef(\play, { | amp = 0.0, buf, trig = 0 |
 			var env, sig;
-			env = EnvGen.kr( Env.asr( 0.0, 0.95, 0.05), trig,  doneAction: 0 );
-			sig = SinOsc.ar(400, 0.0, amp);
-			/*sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf), loop: 1) * env;*/
 
+			env = EnvGen.kr( Env.asr( 0.0, 0.95, 0.05), trig,  doneAction: 0 );
+			sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf), loop: 1) * env;
 			Out.ar(0, sig);
 		}).add;
 
@@ -21,7 +30,7 @@ s.sync(condition);
 
 // setup buffer
 
-~buf = Buffer.read( s, "/home/pi/supercolliderStandaloneRPI1/frogs_short_test.wav");
+~buf = Buffer.read( s, "/home/pi/samples/frogs_short_test.wav");
 
 s.sync(condition);
 
@@ -29,6 +38,9 @@ s.sync(condition);
 
 Synth.new(\play, [\amp, 0.9, \trig, 1]);
 		s.sync(condition);
-	})
+	});
+
+	("PLAYING NOW!").postln;
+
 };
 )

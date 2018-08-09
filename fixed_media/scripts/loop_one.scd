@@ -24,7 +24,7 @@ s.waitForBoot{
 	s.sync;
 	// setup buffer
 
-	~buf = Buffer.read( s, "/home/pi/supercolliderStandaloneRPI1/frogs_short_test.wav");
+	~buf = Buffer.read( s, "/home/pi/samples/frogs_short_test.wav");
 
 	s.sync;
 
