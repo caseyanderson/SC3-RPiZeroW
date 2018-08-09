@@ -28,10 +28,15 @@ s.waitForBoot{
 
 	~buf = Buffer.read( s, "/home/pi/samples/frogs_medium.wav");
 
-	// run the synth
+
+	// wait for sync message from server
+
 	s.sync;
+
+	// run the synth
+
 	Synth.new(\play, [\amp, 0.9, \buf, ~buf, \trig, 1]);
 
-	("PLAYING NOW!").postln;
-	s.options.memSize.postln;
+	("PLAYING NOW!"++", Server Memory: "++s.options.memSize).postln;
+
 };
