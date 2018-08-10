@@ -10,6 +10,11 @@ TODO:
 * need a keyboard interrupt of some sort that shuts SC down gracefully
 */
 
+
+// s.options.memSize = 8192 * 4; // adjust multiplier to increase memory
+
+// s.latency= 0.05;
+
 (
 
 // setup array of buffers
