@@ -7,7 +7,7 @@ quick and dirty example for looping a sound file forever
 TODO:
 * make a way to specify filepath for sample when launching script
 * what do i have to do to use symlinks for samples (for example)?
-* protection against loading too big of a sample into the buffer (no earthly idea what this would be like)
+* need a keyboard interrupt of some sort that shuts SC down gracefully
 */
 
 s.options.memSize = 8192 * 4; // adjust multiplier to increase memory
