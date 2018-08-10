@@ -22,9 +22,8 @@
 
 The **loop_one.scd** can be found [here](../blob/master/fixed_media/scripts/loop_one.scd)
 
-We eventually want the RPi to launch this SC file on boot, which means we need to do some things differently than one would on their laptop:
-* unless we specify otherwise, the SC server runs with a default amount of memory. Increase the amount of memory the SC Server has access to with something like: `s.options.memSize = 8192 * 4`
-* Timing in SC is not always exactly precise and. In order to manage this one can increase the `latency` (amount of time it takes to do things) on the `Server`. Note that this occurs before the `s.waitForBoot` line and is currently set to `0.05`
-* The majority of the code in this file is wrapped in a `s.waitForBoot` method. `s.waitForBoot` evaluates, or runs, the code between curly brackets as soon as the `Server` has completed booting. We do not know exactly how long it will take for the Server to boot so this is an important protective measure
-
-Timing complications don't stop once the Server finishes booting.
+The long-term goal is to have the **RPi** to automatically launch this **SC** file on boot, which requires some special steps in our code:
+* unless we specify otherwise, the **SC** `Server` runs with a default amount of memory. Increase the amount of memory the `Server` has access to with something like: `s.options.memSize = 8192 * 4`
+* Timing in **SC** is not always exactly precise. In order to manage this one can increase the `latency` (amount of time it takes to do things) on the `Server`. Note that this crucially occurs before the start of `s.waitForBoot` block and is set to `0.05`
+* The majority of the code in this file is wrapped in a `s.waitForBoot` [method](https://en.wikipedia.org/wiki/Method_(computer_programming)). `s.waitForBoot` evaluates, or runs, the code between curly brackets as soon as the `Server` has completed booting. We do not know exactly how long it will take for the `Server` to boot so this is an important protective measure
+* 
