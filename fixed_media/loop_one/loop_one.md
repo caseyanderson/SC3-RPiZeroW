@@ -22,7 +22,7 @@
 
 ### loop_one.scd
 
-**loop_one.scd** can be found [here](../blob/master/fixed_media/scripts/loop_one.scd)
+**loop_one.scd** can be found [here](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/fixed_media/loop_one/loop_one.scd)
 
 The long-term goal is to have the **RPi** automatically launch this **SC** file on boot, which requires some special steps in our code:
 * Unless we specify otherwise `scserver` runs with a default amount of memory. Increase the amount of memory `scserver` has access to with something like: `s.options.memSize = 8192 * 4`
