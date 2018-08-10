@@ -20,34 +20,11 @@
 
 ### loop_one.scd
 
-```bash
-s.options.memSize = 8192 * 4; // adjust multiplier to increase memory
+The **loop_one.scd** can be found [here](../blob/master/fixed_media/scripts/loop_one.scd)
 
-s.latency= 0.05;
+We eventually want the RPi to launch this SC file on boot, which means we need to do some things differently than one would on their laptop:
+* unless we specify otherwise, the SC server runs with a default amount of memory. Increase the amount of memory the SC Server has access to with something like: `s.options.memSize = 8192 * 4`
+* Timing in SC is not always exactly precise and. In order to manage this one can increase the `latency` (amount of time it takes to do things) on the `Server`. Note that this occurs before the `s.waitForBoot` line and is currently set to `0.05`
+* The majority of the code in this file is wrapped in a `s.waitForBoot` method. `s.waitForBoot` evaluates, or runs, the code between curly brackets as soon as the `Server` has completed booting. We do not know exactly how long it will take for the Server to boot so this is an important protective measure
 
-s.waitForBoot{
-
-	SynthDef(\play, { | amp = 0.0, buf, trig = 0 |
-		var env, sig;
-
-		env = EnvGen.kr( Env.asr( 0.0, 0.95, 0.05), trig,  doneAction: 0 );
-		sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf), loop: 1) * env;
-		Out.ar(0, sig);
-	}).add;
-
-	// setup buffer
-
-	~buf = Buffer.read( s, "/home/pi/samples/frogs_medium.wav");
-
-	// wait for sync message from server
-
-	s.sync;
-
-	// run the synth
-
-	Synth.new(\play, [\amp, 0.9, \buf, ~buf, \trig, 1]);
-
-	("PLAYING NOW!"++", Server Memory: "++s.options.memSize).postln;
-
-};
-```
+Timing complications don't stop once the Server finishes booting.
