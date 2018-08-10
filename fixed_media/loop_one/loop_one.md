@@ -3,7 +3,9 @@
 ### Materials
 * laptop (with internet connection)
 * Raspberry Pi Zero W (or **RPiZeroW**)
+* USB Audio Adapter (I use [this](https://www.adafruit.com/product/1475), it's fine/cheap)
 * Sound File (**.wav** or **.aiff**)
+
 
 ### Pre-flight
 
