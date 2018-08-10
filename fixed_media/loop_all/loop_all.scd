@@ -1,5 +1,4 @@
 /*
-
 loop_all.scd
 Casey Anderson, 2018
 
@@ -9,7 +8,6 @@ TODO:
 * make a way to specify directory path when launching script
 * make a routine: 1. scramble ~buffers, 2. play each sample, loop
 * need a keyboard interrupt of some sort that shuts SC down gracefully
-
 */
 
 (
