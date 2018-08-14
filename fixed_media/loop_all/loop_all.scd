@@ -19,7 +19,7 @@ TODO:
 
 // setup array of buffers
 
-var numChn = 1, theDir, thePath, bufList;
+var theDir, thePath, bufList;
 
 
 // the directory containing all the samples
@@ -41,18 +41,51 @@ thePath = PathName.new(theDir);
 
 thePath.filesDo{ |file|
 
-	bufList.add( Buffer.read(s, file.fullPath ) ); // this is a hack to eliminate accidental stereo buffers
+	bufList.add( Buffer.readChannel(s, file.fullPath, channels: 0 ) ); // this is a hack to eliminate accidental stereo buffers
 
 };
+
 
 // convert bufList to an array called ~buffers
 
 ~buffers = bufList.asArray;
 
+
+// the SynthDef //
+
+SynthDef(\play, { | amp = 0.0, buf, len, trig = 1 |
+	var env, sig;
+
+	env = EnvGen.kr( Env.linen( 0.0, len, 0.01), trig,  doneAction: 2 );
+	sig = PlayBuf.ar(1, buf, BufRateScale.kr( buf ), loop: 0) * env;
+	Out.ar(0, sig);
+}).add;
+
+
+// the Pbind
+
+~sample_player = Pbind(
+	\instrument, \play,
+//	\buf, Pseq(~buffers, inf),
+	\buf, Pxrand(~buffers, inf),
+	\len, Pfunc { |e| e[\buf].duration },
+	\delta, Pkey(\len)
+);
 )
 
 
-// routine starts here
+// run the Pattern!
 
-~buffers = ~buffers.scramble; // reorder samples
+~playMe = ~sample_player.play;
+~playMe.stop;
 
+/////////
+
+// v2
+(
+~sample_player = Pbind(
+	\instrument, \play,
+	\buf, Pfunc({ |e| ~buffers.choose }),
+	\len, Pfunc({ |e| e[\buf].numFrames/e[\buf].sampleRate }),
+	\delta, Pkey(\len)
+);
