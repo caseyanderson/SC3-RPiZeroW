@@ -11,11 +11,11 @@ TODO:
 */
 
 
-// s.options.memSize = 8192 * 4; // adjust multiplier to increase memory
+s.options.memSize = 8192 * 4; // adjust multiplier to increase memory
 
-// s.latency= 0.05;
+s.latency= 0.05;
 
-(
+s.waitForBoot{
 
 // setup array of buffers
 
@@ -45,6 +45,7 @@ thePath.filesDo{ |file|
 
 };
 
+s.sync;
 
 // convert bufList to an array called ~buffers
 
@@ -66,18 +67,23 @@ SynthDef(\play, { | amp = 0.0, buf, len, trig = 1 |
 
 ~sample_player = Pbind(
 	\instrument, \play,
-	\buf, Pseq(~buffers, inf), // plays all samples in order
-//	\buf, Pxrand(~buffers, inf),
+//	\buf, Pseq(~buffers, inf), // plays all samples in order
+	\buf, Pxrand(~buffers, inf),
 	\len, Pfunc { |e| e[\buf].duration },
 	\delta, Pkey(\len)
 );
-)
+
+s.sync;
+
 
 
 // run the Pattern!
 
 ~playMe = ~sample_player.play;
-~playMe.stop;
+}
+
+
+	~playMe.stop;
 
 
 /////////
