@@ -66,8 +66,8 @@ SynthDef(\play, { | amp = 0.0, buf, len, trig = 1 |
 
 ~sample_player = Pbind(
 	\instrument, \play,
-//	\buf, Pseq(~buffers, inf),
-	\buf, Pxrand(~buffers, inf),
+	\buf, Pseq(~buffers, inf), // plays all samples in order
+//	\buf, Pxrand(~buffers, inf),
 	\len, Pfunc { |e| e[\buf].duration },
 	\delta, Pkey(\len)
 );
