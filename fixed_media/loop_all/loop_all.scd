@@ -80,22 +80,22 @@ s.sync;
 // run the Pattern!
 
 ~playMe = ~sample_player.play;
-}
+};
 
 
-	~playMe.stop;
-
-
-/////////
-
-// v2
-
-/* this way also works and may be more portable in the long-run */
-
-(
-~sample_player = Pbind(
-	\instrument, \play,
-	\buf, Pfunc({ |e| ~buffers.choose }),
-	\len, Pfunc({ |e| e[\buf].numFrames/e[\buf].sampleRate }),
-	\delta, Pkey(\len)
-);
+// ~playMe.stop;
+//
+//
+// /////////
+//
+// // v2
+//
+// /* this way also works and may be more portable in the long-run */
+//
+// (
+// ~sample_player = Pbind(
+// 	\instrument, \play,
+// 	\buf, Pfunc({ |e| ~buffers.choose }),
+// 	\len, Pfunc({ |e| e[\buf].numFrames/e[\buf].sampleRate }),
+// 	\delta, Pkey(\len)
+// );
