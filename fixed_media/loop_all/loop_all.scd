@@ -45,7 +45,6 @@ thePath.filesDo{ |file|
 
 };
 
-s.sync;
 
 // convert bufList to an array called ~buffers
 
@@ -72,9 +71,6 @@ SynthDef(\play, { | amp = 0.0, buf, len, trig = 1 |
 	\len, Pfunc { |e| e[\buf].duration },
 	\delta, Pkey(\len)
 );
-
-s.sync;
-
 
 
 // run the Pattern!
