@@ -79,9 +79,13 @@ SynthDef(\play, { | amp = 0.0, buf, len, trig = 1 |
 ~playMe = ~sample_player.play;
 ~playMe.stop;
 
+
 /////////
 
 // v2
+
+/* this way also works and may be more portable in the long-run */
+
 (
 ~sample_player = Pbind(
 	\instrument, \play,
