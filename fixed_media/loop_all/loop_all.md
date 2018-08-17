@@ -29,13 +29,13 @@ The long-term goals for **loop_all.scd** are similar to those of  **loop_one.scd
 * on Line 13 the memory allocated to the `scserver` is increased: `s.options.memSize = 8192 * 4; // adjust multiplier to increase memory`
 * on Line 15 `latency` is adjusted: `s.latency= 0.05;`
 * on Line 17 the `s.waitForBoot` block begins
+* on Line 21 we define some variables that we will use later: `theDir`, `thePath`, and `bufList`
 * scanning through the rest of the code, one will see two `s.sync` statements
 
 
 #### new techniques from loop_all.scd
 
 The following details new techniques encountered in **loop_all.scd**:
-* we start by defining some variables (Line 21) that we will use later: `theDir`, `thePath`, and `bufList`
 * on Line 26 we tell `scserver` where our folder full of samples is on the **RPi** (this goes in `theDir`). You can check the path to this directory once logged in to your **RPi**: `cd` into the sample folder and run `pwd`.
 * on Line 31 we make a `new` `List` object and store it to `bufList`. `List` allows us to collect and store data without having to know ahead of time how much data we have. Here the `List` has a size of 0 to initialize
 * on Line 36 we make a `new` `PathName` object and point it to `theDir`. `PathName` allows us to ask `scserver` to get the full directory [path](https://en.wikipedia.org/wiki/Path_%28computing%29) for us.
@@ -43,4 +43,5 @@ The following details new techniques encountered in **loop_all.scd**:
 * on Line 52 we convert `bufList` to an `Array`. We don't need to use `List` anymore because we now know how many samples we have in the directory so we may as well convert to a simpler structure
 * our SynthDef is on Line 57 and is basically the same as **loop_one.scd** (though here we set `loop` to 0 or False)
 
-### Patterns!
+
+### Pbind
