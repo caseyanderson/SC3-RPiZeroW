@@ -69,7 +69,9 @@ SynthDef(\play, { | amp = 0.0, buf, len, trig = 1 |
 	\instrument, \play,
 //	\buf, Pseq(~buffers, inf), // plays all samples in order
 	\buf, Pxrand(~buffers, inf),
-	\len, Pfunc { |e| e[\buf].duration },
+	\len, Pfunc { |e|
+		e[\buf].duration;
+		e[\buf].postln; },
 	\delta, Pkey(\len)
 );
 
