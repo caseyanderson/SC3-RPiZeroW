@@ -23,7 +23,7 @@ s.waitForBoot{
 
 	// the directory containing all the samples
 
-	theDir = "/~/pi/uSAMPLES";
+	theDir = "/home/pi/uSAMPLES";
 
 
 	// make the bufList
