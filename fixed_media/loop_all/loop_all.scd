@@ -24,7 +24,7 @@ var theDir, thePath, bufList;
 
 // the directory containing all the samples
 
-theDir = "~/Desktop/uSAMPLES";
+theDir = "/home/pi/uSAMPLES";
 
 
 // make the bufList
@@ -45,6 +45,7 @@ thePath.filesDo{ |file|
 
 };
 
+s.sync;
 
 // convert bufList to an array called ~buffers
 
@@ -72,26 +73,28 @@ SynthDef(\play, { | amp = 0.0, buf, len, trig = 1 |
 	\delta, Pkey(\len)
 );
 
+s.sync;
+
+
 
 // run the Pattern!
 
 ~playMe = ~sample_player.play;
 };
 
+/////////
 
-// ~playMe.stop;
-//
-//
-// /////////
-//
-// // v2
-//
-// /* this way also works and may be more portable in the long-run */
-//
-// (
-// ~sample_player = Pbind(
-// 	\instrument, \play,
-// 	\buf, Pfunc({ |e| ~buffers.choose }),
-// 	\len, Pfunc({ |e| e[\buf].numFrames/e[\buf].sampleRate }),
-// 	\delta, Pkey(\len)
-// );
+/*
+ ~playMe.stop;
+
+// v2
+
+// this way also works and may be more portable in the long-run
+(
+~sample_player = Pbind(
+	\instrument, \play,
+ 	\buf, Pfunc({ |e| ~buffers.choose }),
+ 	\len, Pfunc({ |e| e[\buf].numFrames/e[\buf].sampleRate }),
+ 	\delta, Pkey(\len)
+ );
+*/
