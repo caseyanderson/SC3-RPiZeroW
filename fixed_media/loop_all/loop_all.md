@@ -17,13 +17,16 @@
 
 it would be cool to skip this part idk
 
-
-### loop_all.scd
-
 **loop_all.scd** can be found [here](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/fixed_media/loop_all/loop_all.scd)
 
-Again, similar goals to **loop_one.scd**: we want the **RPi** to automatically launch this **SC** file on boot. The following is basically the same as **loop_one.scd**:
+
+### similarities between loop_one.scd and loop_all.scd
+
+The long-term goals for **loop_all.scd** are similar to those of  **loop_one.scd**: we want the **RPi** to automatically launch this **SC** file on boot. The following is more or less the same in both files:
 * on Line 13 the memory allocated to the `scserver` is increased: `s.options.memSize = 8192 * 4; // adjust multiplier to increase memory`
-* on Line 15 latency is adjusted: `s.latency= 0.05;`
+* on Line 15 `latency` is adjusted: `s.latency= 0.05;`
 * on Line 17 the `s.waitForBoot` block begins
-* scanning through the rest of the code, one will see 2x `s.sync` statements, which tells the interpreter to wait until the `scserver` is done processing the previous code before proceeding
+* scanning through the rest of the code, one will see two `s.sync` statements
+
+
+### new techniques from loop_all.scd
