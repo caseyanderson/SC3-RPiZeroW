@@ -30,6 +30,7 @@ The long-term goals for **loop_all.scd** are similar to those of  **loop_one.scd
 * on Line 15 `latency` is adjusted: `s.latency= 0.05;`
 * on Line 17 the `s.waitForBoot` block begins
 * on Line 21 we define some variables that we will use later: `theDir`, `thePath`, and `bufList`
+* on Line 26 we assume that the filepath to our directory of samples (`theDir`) will be included as an argument when running the file. We access that information here and store it to `theDir`
 * scanning through the rest of the code, one will see two `s.sync` statements
 
 
@@ -45,3 +46,21 @@ The following details new techniques encountered in **loop_all.scd**:
 
 
 ### Pbind
+
+
+### running the file
+
+1. change directories into the `supercolliderStandaloneRPI1`: `cd supercolliderStandaloneRPI1/`
+2. run the following command to start **SC**, run the `loop_one.scd` file, and pass the `filepath` information to **SC** as an argument (edit to suit your file structure and file name): `xvfb-run --auto-servernum ./sclang -a -l ~/supercolliderStandaloneRPI1/sclang.yaml /home/pi/SC3-RPiZeroW/fixed_media/loop_all/loop_all.scd /home/pi/uSAMPLES/`
+
+
+#### autostart.sh
+
+Put the following in `autostart.sh` (edit to suit your situation), run via `cron` (or similar) on boot.
+
+```sh
+#!/bin/bash
+
+./sclang -a -l sclang.yaml /home/pi/SC3-RPiZeroW/fixed_media/loop_all/loop_all.scd /home/pi/uSAMPLES/
+
+```
