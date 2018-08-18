@@ -34,7 +34,7 @@ The long-term goal is to have the **RPi** automatically launch this **SC** file 
 
 #### loop_one.sh
 
-Edit to suit your needs and launch via `cron` on reboot
+Edit to suit your needs, make the file executable, and launch via `cron` on reboot
 
 ```sh
 #!/bin/bash
