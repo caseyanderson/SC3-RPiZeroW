@@ -17,7 +17,7 @@ s.latency= 0.05;
 s.waitForBoot{
 	var thePath;
 
-	thePath = thisProcess.argv.asString;
+	thePath = thisProcess.argv;
 
 	SynthDef(\play, { | amp = 0.0, buf, trig = 0 |
 		var env, sig;
@@ -29,7 +29,7 @@ s.waitForBoot{
 
 	// setup buffer
 
-	~buf = Buffer.read( s, thePath);
+	~buf = Buffer.read( s, thePath[0].asString);
 
 	// wait for sync message from server
 
