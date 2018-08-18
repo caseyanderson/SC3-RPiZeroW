@@ -1,12 +1,5 @@
 ## loop one file forever
 
-### Materials
-* laptop (with internet connection)
-* Raspberry Pi Zero W (or **RPiZeroW**)
-* USB Audio Adapter (I use [this](https://www.adafruit.com/product/1475), it's fine / cheap)
-* Sound File (**.wav** or **.aiff**)
-
-
 ### Sound File
 
 1. Acquire or locate a **.wav** / **.aiff** file (note: **SC** does not support **MP3** because **MP3** is not [free software](https://en.wikipedia.org/wiki/Free_software))

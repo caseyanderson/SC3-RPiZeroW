@@ -1,12 +1,5 @@
 ## loop all files in a folder forever
 
-### Materials
-* laptop (with internet connection)
-* Raspberry Pi Zero W (or **RPiZeroW**)
-* USB Audio Adapter (I use [this](https://www.adafruit.com/product/1475), it's fine / cheap)
-* Sound File (**.wav** or **.aiff**)
-
-
 ### Sound File
 
 Get or make a bunch of short **.wav** or **.aiff**'s and put them all in a directory on your **RPi**.
