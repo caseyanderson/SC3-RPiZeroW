@@ -56,7 +56,7 @@ The following details new techniques encountered in **loop_all.scd**:
 
 #### autostart.sh
 
-Put the following in `autostart.sh` (edit to suit your situation), run via `cron` (or similar) on boot.
+Put the following in `autostart.sh` (edit to suit your situation), run via `cron` (or similar) on reboot
 
 ```sh
 #!/bin/bash
