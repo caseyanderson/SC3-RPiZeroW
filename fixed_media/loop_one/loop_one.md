@@ -32,9 +32,7 @@ The long-term goal is to have the **RPi** automatically launch this **SC** file 
 2. run the following command to start **SC**, run the `loop_one.scd` file, and pass the `filepath` information to **SC** as an argument (edit to suit your file structure and file name): `xvfb-run --auto-servernum ./sclang -a -l ~/supercolliderStandaloneRPI1/sclang.yaml /home/pi/SC3-RPiZeroW/fixed_media/loop_one/loop_one.scd /home/pi/uSAMPLES/akonting.aif`
 
 
-#### autostart.sh
-
-Put the following in `autostart.sh` (edit to suit your situation), run via `cron` (or similar) on reboot
+#### loop_one.sh
 
 ```sh
 #!/bin/bash

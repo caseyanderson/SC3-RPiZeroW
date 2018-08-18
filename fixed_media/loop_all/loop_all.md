@@ -49,9 +49,7 @@ blah blah blah here is a simple explanation of Pbinds
 2. run the following command to start **SC**, run the `loop_all.scd` file, and pass the `filepath` information to **SC** as an argument (edit to suit your file structure and file name): `xvfb-run --auto-servernum ./sclang -a -l ~/supercolliderStandaloneRPI1/sclang.yaml /home/pi/SC3-RPiZeroW/fixed_media/loop_all/loop_all.scd /home/pi/uSAMPLES/`
 
 
-#### autostart.sh
-
-Put the following in `autostart.sh` (edit to suit your situation), run via `cron` (or similar) on reboot
+#### loop_all.sh
 
 ```sh
 #!/bin/bash
