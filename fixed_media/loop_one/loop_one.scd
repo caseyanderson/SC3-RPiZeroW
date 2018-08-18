@@ -2,11 +2,14 @@
 loop_one.scd
 Casey Anderson, 2018
 
-quick and dirty example for looping a sound file forever
+loop a sound file forever
+
+run the file from inside supercolliderStandaloneRPI1 as follows (edit to suit your needs):
+
+	xvfb-run --auto-servernum ./sclang -a -l ~/supercolliderStandaloneRPI1/sclang.yaml /home/pi/SC3-RPiZeroW/fixed_media/loop_one/loop_one.scd /path/to/the/file
+
 
 TODO:
-* make a way to specify filepath for sample when launching script
-* what do i have to do to use symlinks for samples (for example)?
 * need a keyboard interrupt of some sort that shuts SC down gracefully
 */
 

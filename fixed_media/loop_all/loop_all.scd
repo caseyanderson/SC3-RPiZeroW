@@ -4,8 +4,12 @@ Casey Anderson, 2018
 
 play all files in a directory as one long loop
 
+run the file from inside supercolliderStandaloneRPI1 as follows (edit to suit your needs):
+
+	xvfb-run --auto-servernum ./sclang -a -l ~/supercolliderStandaloneRPI1/sclang.yaml /home/pi/SC3-RPiZeroW/fixed_media/loop_all/loop_all.scd /path/to/the/directory
+
+
 TODO:
-* make a way to specify directory path when launching script
 * need a keyboard interrupt of some sort that shuts SC down gracefully
 */
 
