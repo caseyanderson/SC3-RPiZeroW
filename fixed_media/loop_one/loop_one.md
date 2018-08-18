@@ -40,6 +40,8 @@ The long-term goal is to have the **RPi** automatically launch this **SC** file 
 
 #### autostart.sh
 
+Put this in autostart.sh (edit to suit your situation), run via `cron` (or similar) on boot.
+
 ```sh
 #!/bin/bash
 
