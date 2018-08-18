@@ -47,6 +47,7 @@ The following details new techniques encountered in **loop_all.scd**:
 
 ### Pbind
 
+blah blah blah here is a simple explanation of Pbinds
 
 ### running the file
 
