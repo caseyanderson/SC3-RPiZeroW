@@ -7,12 +7,6 @@
 * Sound File (**.wav** or **.aiff**)
 
 
-### Pre-flight
-
-1. **microSD** card prep
-2. build **SC** for **RPiZeroW** (steps [here](https://github.com/redFrik/supercolliderStandaloneRPI1))
-
-
 ### Sound File
 
 Get or make a bunch of short **.wav** or **.aiff**'s and put them all in a directory on your **RPi**.
