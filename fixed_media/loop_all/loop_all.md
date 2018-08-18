@@ -51,7 +51,7 @@ The following details new techniques encountered in **loop_all.scd**:
 ### running the file
 
 1. change directories into the `supercolliderStandaloneRPI1`: `cd supercolliderStandaloneRPI1/`
-2. run the following command to start **SC**, run the `loop_one.scd` file, and pass the `filepath` information to **SC** as an argument (edit to suit your file structure and file name): `xvfb-run --auto-servernum ./sclang -a -l ~/supercolliderStandaloneRPI1/sclang.yaml /home/pi/SC3-RPiZeroW/fixed_media/loop_all/loop_all.scd /home/pi/uSAMPLES/`
+2. run the following command to start **SC**, run the `loop_all.scd` file, and pass the `filepath` information to **SC** as an argument (edit to suit your file structure and file name): `xvfb-run --auto-servernum ./sclang -a -l ~/supercolliderStandaloneRPI1/sclang.yaml /home/pi/SC3-RPiZeroW/fixed_media/loop_all/loop_all.scd /home/pi/uSAMPLES/`
 
 
 #### autostart.sh
