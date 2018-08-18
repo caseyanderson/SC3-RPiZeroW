@@ -51,6 +51,8 @@ blah blah blah here is a simple explanation of Pbinds
 
 #### loop_all.sh
 
+Edit to suit your needs and launch via `cron` on reboot
+
 ```sh
 #!/bin/bash
 
