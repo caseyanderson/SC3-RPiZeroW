@@ -40,11 +40,17 @@ The long-term goal is to have the **RPi** automatically launch this **SC** file 
 
 #### autostart.sh
 
-Put this in autostart.sh (edit to suit your situation), run via `cron` (or similar) on boot.
+Put the following in `autostart.sh` (edit to suit your situation), run via `cron` (or similar) on boot.
 
 ```sh
 #!/bin/bash
 
-./sclang -a -l sclang.yaml /home/pi/SC3-RPiZeroW/fixed_media/loop_one/loop_one.scd /home/pi/uSAMPLES/akonting.aif
+THE_SCRIPT="/home/pi/SC3-RPiZeroW/fixed_media/loop_one/loop_one.scd"
+THE_DIR="/home/pi/uSAMPLES"
+THE_FILE="akonting.aif"
+
+THE_PATH=$THE_DIR/$THE_FILE
+
+./sclang -a -l sclang.yaml $THE_SCRIPT $THE_PATH
 
 ```

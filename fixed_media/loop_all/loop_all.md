@@ -61,6 +61,9 @@ Put the following in `autostart.sh` (edit to suit your situation), run via `cron
 ```sh
 #!/bin/bash
 
-./sclang -a -l sclang.yaml /home/pi/SC3-RPiZeroW/fixed_media/loop_all/loop_all.scd /home/pi/uSAMPLES/
+THE_SCRIPT="/home/pi/SC3-RPiZeroW/fixed_media/loop_all/loop_all.scd"
+THE_DIR="/home/pi/uSAMPLES"
+
+./sclang -a -l sclang.yaml $THE_SCRIPT $THE_DIR
 
 ```
