@@ -15,6 +15,9 @@ s.options.memSize = 8192 * 4; // adjust multiplier to increase memory
 s.latency= 0.05;
 
 s.waitForBoot{
+	var thePath;
+
+	thePath = thisProcess.argv.asString;
 
 	SynthDef(\play, { | amp = 0.0, buf, trig = 0 |
 		var env, sig;
@@ -26,7 +29,7 @@ s.waitForBoot{
 
 	// setup buffer
 
-	~buf = Buffer.read( s, "/home/pi/samples/frogs_medium.wav");
+	~buf = Buffer.read( s, thePath);
 
 	// wait for sync message from server
 
