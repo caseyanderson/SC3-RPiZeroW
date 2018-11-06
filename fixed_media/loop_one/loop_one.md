@@ -27,7 +27,7 @@ The long-term goal is to have the **RPi** automatically launch this **SC** file 
 
 #### loop_one.sh
 
-1. Edit the below file to suit your needs
+1. Edit `loop_one.sh` to suit your needs
 
 ```sh
 #!/bin/bash

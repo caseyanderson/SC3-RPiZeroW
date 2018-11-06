@@ -44,7 +44,7 @@ blah blah blah here is a simple explanation of Pbinds
 
 #### loop_all.sh
 
-Edit to suit your needs, make the file executable, and launch via `cron` on reboot
+1. Edit `loop_all.sh` to suit your needs
 
 ```sh
 #!/bin/bash
@@ -55,3 +55,8 @@ THE_DIR="/home/pi/uSAMPLES"
 ./sclang -a -l sclang.yaml $THE_SCRIPT $THE_DIR
 
 ```
+
+2. make the file executable: `sudo chmod +x loop_all.sh`
+3. open up `cron`: `crontab -e`
+4. scroll to the bottom of the file and add the following: `@reboot cd /home/pi/supercolliderStandaloneRPI2 && xvfb-run sh /home/pi/SC3-RPiZeroW/fixed_media/loop_all/loop_all.sh`
+5. reboot to hear `loop_all.sh` start everything up
