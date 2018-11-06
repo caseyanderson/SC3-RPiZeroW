@@ -13,7 +13,7 @@ Get or make a bunch of short **.wav** or **.aiff**'s and put them all in a direc
 #### similarities between loop_one.scd and loop_all.scd
 
 The long-term goals for **loop_all.scd** are similar to those of  **loop_one.scd**: we want the **RPi** to automatically launch this **SC** file on boot. The following is more or less the same in both files:
-* on Line 13 the memory allocated to the `scserver` is increased: `s.options.memSize = 8192 * 4;
+* on Line 13 the memory allocated to the `scserver` is increased: `s.options.memSize = 8192 * 4;`
 * on Line 15 `latency` is adjusted: `s.latency= 0.05;`
 * on Line 17 the `s.waitForBoot` block begins
 * on Line 21 we define some variables that we will use later: `theDir`, `thePath`, and `bufList`
@@ -21,7 +21,7 @@ The long-term goals for **loop_all.scd** are similar to those of  **loop_one.scd
 * scanning through the rest of the code, one will see two `s.sync` statements
 
 
-#### new techniques from loop_all.scd
+#### new techniques unique to loop_all.scd
 
 The following details new techniques encountered in **loop_all.scd**:
 * on Line 26 we tell `scserver` where our folder full of samples is on the **RPi** (this goes in `theDir`). You can check the path to this directory once logged in to your **RPi**: `cd` into the sample folder and run `pwd`.
