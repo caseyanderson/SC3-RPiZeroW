@@ -27,7 +27,7 @@ The long-term goal is to have the **RPi** automatically launch this **SC** file 
 
 #### loop_one.sh
 
-Edit to suit your needs, make the file executable, and launch via `cron` on reboot
+1. Edit the below file to suit your needs
 
 ```sh
 #!/bin/bash
@@ -41,3 +41,8 @@ THE_PATH=$THE_DIR/$THE_FILE
 ./sclang -a -l sclang.yaml $THE_SCRIPT $THE_PATH
 
 ```
+
+2. make the file executable: `sudo chmod +x loop_one.sh`
+3. open up `cron`: `crontab -e`
+4. scroll to the bottom of the file and add the following: `@reboot cd /home/pi/supercolliderStandaloneRPI2 && xvfb-run sh /home/pi/SC3-RPiZeroW/fixed_media/loop_one/loop_one.sh`
+5. reboot to hear `loop_one.sh` start everything up
