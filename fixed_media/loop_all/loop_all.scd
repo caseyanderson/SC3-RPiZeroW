@@ -84,6 +84,8 @@ s.waitForBoot{
 
 	~playMe = ~sample_player.play;
 
+	("PLAYING NOW!"++", Server Memory: "++s.options.memSize).postln;
+
 };
 
 /////////
