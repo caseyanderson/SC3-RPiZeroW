@@ -42,6 +42,6 @@ s.waitForBoot{
                 "freeing synth".postln;
                 ~x.free;
             });
-}, '/sin');
+}, '/control');
 
 };
