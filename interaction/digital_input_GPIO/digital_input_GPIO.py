@@ -2,7 +2,7 @@
 
 '''
 
-
+python3 digital_input_GPIO.py --ip "127.0.0.1" --port 57120 --pin 16
 '''
 
 from pythonosc import osc_message_builder
@@ -23,11 +23,13 @@ if __name__ == '__main__':
             help="The ip of the OSC server")
         parser.add_argument("--port", type=int, default=5005,
             help="The port the OSC server is listening on")
+        parser.add_argument("--pin", type=int, default=16,
+            help="The GPIO pin the button is on")
         args = parser.parse_args()
 
         client = udp_client.SimpleUDPClient(args.ip, args.port)
 
-        button = Button(16)
+        button = Button(args.pin)
 
         prev_val = button.value
 
