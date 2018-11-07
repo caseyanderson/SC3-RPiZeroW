@@ -13,16 +13,22 @@ s.boot;
 
 ~x.sendMsg('/control', 'run');
 
-// turn the other computer's sin on
+
+// turn the synth on
 
 ~x.sendMsg('/control', 'play');
 
 
-// turn the other computer's sin off
+// turn the synth off
 
 ~x.sendMsg('/control', 'stop');
 
 
-// change the other computer's sin's volume (try different numbers between 0.0 and 1.0)
+// change the synth's volume (try different numbers between 0.0 and 1.0)
 
 ~x.sendMsg('/control', 'vol', 0.99 );
+
+
+// free the synth
+
+~x.sendMsg('/control', 'stop');
