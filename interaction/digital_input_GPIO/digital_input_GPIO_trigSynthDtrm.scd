@@ -24,4 +24,8 @@ OSCdef(\sinResponder, { | msg |
 			("vol "++msg[2]).postln;
 		});
 }, '/control');
+
+"READY!".postln;
+
+
 }
