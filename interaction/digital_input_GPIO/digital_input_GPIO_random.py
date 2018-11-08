@@ -2,15 +2,14 @@
 
 '''
 
+
 python3 digital_input_GPIO.py --ip "127.0.0.1" --port 57120 --pin 16
 '''
 
 from pythonosc import osc_message_builder
 from pythonosc import udp_client
 
-
 from gpiozero import Button
-from gpiozero import LED
 
 import argparse
 import random
