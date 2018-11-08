@@ -27,6 +27,7 @@ if __name__ == '__main__':
         args = parser.parse_args()
 
         client = udp_client.SimpleUDPClient(args.ip, args.port)
+        msg = osc_message_builder.OscMessageBuilder(address="/control")
 
         button = Button(args.pin)
 
@@ -37,10 +38,9 @@ if __name__ == '__main__':
         while True:
             if button.value == True and button.value != prev_val:
                 print("trig synth!")
-                print()
-            elif button.value == False and button.value != prev_val:
-                print("stop synth!")
-                print()
+                msg.add_arg("play")
+                msg = msg.build()
+                client.send(msg)             
             prev_val = button.value
     except KeyboardInterrupt:
         print("interrupted!")
