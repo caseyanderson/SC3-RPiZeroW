@@ -21,7 +21,7 @@ if __name__ == '__main__':
         parser = argparse.ArgumentParser()
         parser.add_argument("--ip", default="127.0.0.1",
             help="The ip of the OSC server")
-        parser.add_argument("--port", type=int, default=5005,
+        parser.add_argument("--port", type=int, default=57120,
             help="The port the OSC server is listening on")
         parser.add_argument("--pin", type=int, default=16,
             help="The GPIO pin the button is on")
