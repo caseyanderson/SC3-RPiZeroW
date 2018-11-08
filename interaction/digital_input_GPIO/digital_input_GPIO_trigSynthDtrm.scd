@@ -1,5 +1,7 @@
 // the example synth that will be controlled. note the standardized arguments: amp, freq, trig
 
+s.options.memSize = 8192 * 8; // adjust multiplier to increase memory, just guessing on number
+
 s.latency= 0.05;
 
 s.waitForBoot{
