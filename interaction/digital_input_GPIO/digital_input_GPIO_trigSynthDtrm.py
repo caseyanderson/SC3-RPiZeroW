@@ -37,8 +37,10 @@ if __name__ == '__main__':
         while True:
             if button.value == True and button.value != prev_val:
                 print("trig synth!")
+                print()
             elif button.value == False and button.value != prev_val:
                 print("stop synth!")
+                print()
             prev_val = button.value
     except KeyboardInterrupt:
         print("interrupted!")
