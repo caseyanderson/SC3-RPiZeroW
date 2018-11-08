@@ -27,9 +27,9 @@ if __name__ == '__main__':
             help="The GPIO pin the button is on")
         args = parser.parse_args()
 
-        client = udp_client.SimpleUDPClient(args.ip, args.port)
+        client = udp_client.SimpleUDPClient(args.ip, args.port) # make the client
 
-        button = Button(args.pin)
+        button = Button(args.pin) # make the button object
 
         prev_val = button.value
 
