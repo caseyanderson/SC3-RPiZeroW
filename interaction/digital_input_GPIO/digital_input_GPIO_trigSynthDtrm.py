@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 '''
+a button press creates a new instance of a deterministic synth via OSC
 
-
-python3 digital_input_GPIO.py --ip "127.0.0.1" --port 57120 --pin 16
+To Run: python3 digital_input_GPIO.py --ip "127.0.0.1" --port 57120 --pin 16
 '''
 
 from pythonosc import osc_message_builder

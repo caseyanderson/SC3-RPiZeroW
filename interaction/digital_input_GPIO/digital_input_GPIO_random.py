@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 '''
-
+a button press generates and sends a random number over OSC
 
 python3 digital_input_GPIO.py --ip "127.0.0.1" --port 57120 --pin 16
 '''
