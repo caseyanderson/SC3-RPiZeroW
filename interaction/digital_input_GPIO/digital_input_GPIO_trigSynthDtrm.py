@@ -13,6 +13,7 @@ from gpiozero import Button
 
 import argparse
 import random
+from time import sleep
 
 
 if __name__ == '__main__':
@@ -27,6 +28,7 @@ if __name__ == '__main__':
         args = parser.parse_args()
 
         client = udp_client.SimpleUDPClient(args.ip, args.port)
+        sleep(1)
         msg = osc_message_builder.OscMessageBuilder(address="/control")
 
         button = Button(args.pin)
@@ -40,7 +42,7 @@ if __name__ == '__main__':
                 print("trig synth!")
                 msg.add_arg("play")
                 msg = msg.build()
-                client.send(msg)             
+                client.send(msg)
             prev_val = button.value
     except KeyboardInterrupt:
         print("interrupted!")
