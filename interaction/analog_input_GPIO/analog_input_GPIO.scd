@@ -6,7 +6,7 @@ s.latency= 0.05;
 
 s.waitForBoot{
 
-SynthDef( \sin, { | amp = 0.0, freq = 200, out = 0, trig = 0 |
+SynthDef( \sin, { | amp = 0.0, freq = 100, out = 0, trig = 0 |
 	var env, sig, finalSig;
 	env = EnvGen.kr( Env.asr( 0.001, 0.9, 0.1 ), trig, doneAction: 2 );
 	sig = SinOsc.ar( freq * IRand( 1, 6), 0.0, amp );
