@@ -18,6 +18,8 @@ s.sync;
 
 x = Synth( \sin, [ \amp, 0.3, \trig, 1]);
 
+s.sync;
+
 // receive messages from another computer to change Synth at ~x
 
 OSCdef(\sinResponder, { | msg |
