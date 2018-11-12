@@ -1,5 +1,32 @@
 # SC3-RPiZeroW
 a collection of SuperCollider3 applications/examples for the Raspberry Pi Zero W
 
-Assumes that readers are prototyping on a laptop, deploying to a Raspberry Pi Zero W, and have built supercolliderStandaloneRPI1
- as described [here](https://github.com/redFrik/supercolliderStandaloneRPI1). Also assumes usage of a USB Audio Adapter (I use [this](https://www.adafruit.com/product/1475), it's fine / cheap).
+## Pre-flight
+
+This repo assumes that readers are:
+* prototyping on a laptop
+* deploying to a Raspberry Pi Zero W
+* have built supercolliderStandaloneRPI1 as described [here](https://github.com/redFrik/supercolliderStandaloneRPI1)
+
+Note: in many cases these examples will also work on the Raspberry Pi 3 Model B+ with the following caveats:
+* readers must have built supercolliderStandaloneRPI2 as described [here](https://github.com/redFrik/supercolliderStandaloneRPI2)
+* lines referencing supercolliderStandaloneRPI1 are edited to reference supercolliderStandaloneRPI2
+
+## Materials
+* [Raspberry Pi Zero W](https://www.adafruit.com/product/3708)
+* [5V 2.5A Switching Power Supply with 20AWG MicroUSB * Cable](https://www.adafruit.com/product/1995)
+* [USB OTG Host Cable - MicroB OTG male to A female](https://www.adafruit.com/product/1099) or similar
+* [USB Audio Adapter](https://www.adafruit.com/product/1475) or similar
+* [SparkFun PiWedge](https://www.sparkfun.com/products/13717) or [Adafruit Pi Cobbler](https://www.adafruit.com/product/2028) (for GPIO)
+
+
+## Table of Contents
+* fixed media
+  * loop_one: loop one sound file forever
+  * loop_all: loop all sound files in a directory forever
+* OSC
+  * listener: basic OSC communication
+  * control synth: control a synth on a different computer
+* GPIO
+  * digital input: trigger synth creation & playback via Button press (or similar)
+  * analog input: control volume of synth via sensor input (SPI)
