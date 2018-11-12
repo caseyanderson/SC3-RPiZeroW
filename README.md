@@ -29,4 +29,4 @@ Note: in many cases these examples will also work on the Raspberry Pi 3 Model B+
   * control synth: control a synth on a different computer
 * GPIO
   * digital input: trigger synth creation & playback via Button press (or similar)
-  * analog input: control volume of synth via sensor input (SPI)
+  * analog input: control volume of synth via analog sensor input (SPI ADC)
