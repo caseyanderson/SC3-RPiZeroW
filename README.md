@@ -22,8 +22,8 @@ Note: in many cases these examples will also work on the Raspberry Pi 3 Model B+
 
 ## Table of Contents
 * fixed media
-  * loop_one: loop one sound file forever
-  * loop_all: loop all sound files in a directory forever
+  * [loop_one](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/fixed_media/loop_one/loop_one.md): loop one sound file forever
+  * [loop_all](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/fixed_media/loop_all/loop_all.md): loop all sound files in a directory forever
 * OSC
   * listener: basic OSC communication
   * control synth: control a synth on a different computer
