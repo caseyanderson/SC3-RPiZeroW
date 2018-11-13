@@ -32,7 +32,7 @@ OSCdef(\listener, { | msg |
 			'freq', {
 				var val;
 				val = msg[2].linlin(0.0, 1.0, 200, 400);
-				("freq is " + val).postln;
+				// ("freq is " + val).postln;
 				~sens1.set(val);
 		});
 }, '/control');
