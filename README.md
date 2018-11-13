@@ -12,6 +12,7 @@ Note: in many cases these examples will also work on the Raspberry Pi 3 Model B+
 * readers must have built supercolliderStandaloneRPI2 as described [here](https://github.com/redFrik/supercolliderStandaloneRPI2)
 * lines referencing supercolliderStandaloneRPI1 are edited to reference supercolliderStandaloneRPI2
 
+
 ## Materials
 * [Raspberry Pi Zero W](https://www.adafruit.com/product/3708)
 * [5V 2.5A Switching Power Supply with 20AWG MicroUSB * Cable](https://www.adafruit.com/product/1995)
