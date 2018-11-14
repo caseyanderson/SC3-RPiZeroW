@@ -46,7 +46,7 @@ if __name__ == '__main__':
                 msg.add_arg(sensor.value)
                 msg = msg.build()
                 client.send(msg)
-            else:
+            elif button.value == False:
                 msg = osc_message_builder.OscMessageBuilder(address="/control")
                 msg.add_arg("freq")
                 msg.add_arg(sensor.value)
