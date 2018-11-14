@@ -3,7 +3,7 @@
 '''
 a button press creates a new instance of a deterministic synth via OSC
 
-To Run: python3 digital_input_GPIO.py --ip "127.0.0.1" --port 57120 --chn 0
+To Run: python3 digital_input_GPIO.py --ip "127.0.0.1" --port 57120 --pin 27 --chn 0
 '''
 
 from pythonosc import osc_message_builder
@@ -42,13 +42,13 @@ if __name__ == '__main__':
             if button.value == True and button.value != prev_val:
                 msg = osc_message_builder.OscMessageBuilder(address="/control")
                 msg.add_arg("play")
-                msg.add_arg("freq")
+                msg.add_arg("wobble")
                 msg.add_arg(sensor.value)
                 msg = msg.build()
                 client.send(msg)
             elif button.value == False:
                 msg = osc_message_builder.OscMessageBuilder(address="/control")
-                msg.add_arg("freq")
+                msg.add_arg("wobble")
                 msg.add_arg(sensor.value)
                 msg = msg.build()
                 client.send(msg)
