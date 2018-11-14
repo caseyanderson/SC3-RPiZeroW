@@ -39,6 +39,7 @@ if __name__ == '__main__':
                 print("trig synth!")
                 client.send_message("/control", random.random())
             prev_val = button.value
+            sleep(0.05)
     except KeyboardInterrupt:
         print("interrupted!")
         button.close()

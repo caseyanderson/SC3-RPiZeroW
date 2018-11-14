@@ -43,6 +43,7 @@ if __name__ == '__main__':
                 msg = msg.build()
                 client.send(msg)
             prev_val = button.value
+            sleep(0.05)
     except KeyboardInterrupt:
         print("interrupted!")
         button.close()

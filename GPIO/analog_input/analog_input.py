@@ -39,6 +39,7 @@ if __name__ == '__main__':
             msg.add_arg(sensor.value)
             msg = msg.build()
             client.send(msg)
+        sleep(0.05)
     except KeyboardInterrupt:
         print("interrupted!")
         button.close()
