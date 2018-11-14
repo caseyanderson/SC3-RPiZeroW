@@ -36,7 +36,7 @@ OSCdef(\listener, { | msg |
 		});
 }, '/control');
 
-"READY!".postln;
 
+"READY!".postln;
 
 }

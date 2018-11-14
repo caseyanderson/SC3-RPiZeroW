@@ -40,6 +40,7 @@ if __name__ == '__main__':
 
         while True:
             if button.value == True and button.value != prev_val:
+                print("trig synth!")
                 msg = osc_message_builder.OscMessageBuilder(address="/control")
                 msg.add_arg("play")
                 msg.add_arg("wobble")
