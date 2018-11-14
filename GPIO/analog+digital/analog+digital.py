@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 '''
-Trigger synth instances via Button press, control "wobble time" via analog sensor (SPI ADC)
+Trigger synth instances via button press, control "wobble time" via analog sensor (SPI ADC)
 
 To Run: python3 digital_input_GPIO.py --ip "127.0.0.1" --port 57120 --pin 27 --chn 0
 '''
