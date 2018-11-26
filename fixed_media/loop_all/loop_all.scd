@@ -75,12 +75,13 @@ s.waitForBoot{
 			\len, Pfunc { |e|
 	      var dur, bDur, rDiv;
 	      bDur = e[\buf].duration;
-	      rDiv = rrand(2, 10);
+	      rDiv = rrand(20, 30); // (2, 10), (6, 15), (20, 30)
 	      dur = bDur / rDiv;
 	    },
 	    \start, Pwhite(0.0, 1.0, inf),
-			\delta, Pkey(\len) /*+ Pwhite( 2, 10, inf)*/
-	);
+			\delta, Pkey(\len) + Pwhite( 2, 10, inf)
+		);
+
 
 	s.sync;
 
