@@ -79,7 +79,7 @@ s.waitForBoot{
 	      dur = bDur / rDiv;
 	    },
 	    \start, Pwhite(0.0, 1.0, inf),
-			\delta, Pkey(\len) + Pwhite( 2, 10, inf)
+			\delta, Pkey(\len) /*+ Pwhite( 2, 10, inf)*/
 	);
 
 	s.sync;

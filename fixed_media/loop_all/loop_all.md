@@ -34,8 +34,7 @@ The following details new techniques encountered in **loop_all.scd**:
 
 ### Pbind
 
-blah blah blah here is a simple explanation of Pbinds
-
+Note: The following draws on [this](http://doc.sccode.org/Tutorials/A-Practical-Guide/PG_01_Introduction.html) great guide by H. James Harkins
 ### running the file
 
 1. change directories into the `supercolliderStandaloneRPI1`: `cd supercolliderStandaloneRPI1/`
