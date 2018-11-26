@@ -58,23 +58,28 @@ s.waitForBoot{
 
 	// the SynthDef //
 
-	SynthDef(\play, { | amp = 0.0, buf, len, trig = 1 |
+	SynthDef(\play, { | amp = 0.0, buf, len, start = 0, trig = 1 |
 		var env, sig;
 
 		env = EnvGen.kr( Env.linen( 0.0, len, 0.01), trig,  doneAction: 2 );
-		sig = PlayBuf.ar(1, buf, BufRateScale.kr( buf ), loop: 0) * env;
+		sig = PlayBuf.ar(1, buf, BufRateScale.kr( buf ), startPos: (start * BufFrames.kr(buf)), loop: 1) * env;
 		Out.ar(0, sig);
-	}).add;
+}).add;
 
 
 	// the Pbind
 
 	~sample_player = Pbind(
-		\instrument, \play,
-		//	\buf, Pseq(~buffers, inf), // plays all samples in order
-		\buf, Pxrand(~buffers, inf),
-		\len, Pfunc { |e| e[\buf].duration },
-		\delta, Pkey(\len)
+	    \instrument, \play,
+			\buf, Pxrand(~buffers, inf),
+			\len, Pfunc { |e|
+	      var dur, bDur, rDiv;
+	      bDur = e[\buf].duration;
+	      rDiv = rrand(2, 10);
+	      dur = bDur / rDiv;
+	    },
+	    \start, Pwhite(0.0, 1.0, inf),
+			\delta, Pkey(\len) + Pwhite( 2, 10, inf)
 	);
 
 	s.sync;
