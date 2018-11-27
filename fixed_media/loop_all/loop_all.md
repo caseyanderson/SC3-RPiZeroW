@@ -32,7 +32,7 @@ The following details new techniques encountered in **loop_all.scd**:
 * our SynthDef is on Line 57 and is basically the same as **loop_one.scd** (though here we set `loop` to 0 or False)
 
 
-### Pbind (loop_all.scd)
+### Pbind
 
 Note: [this](http://doc.sccode.org/Tutorials/A-Practical-Guide/PG_01_Introduction.html) is a great guide about Patterns in  (by H. James Harkins)
 
