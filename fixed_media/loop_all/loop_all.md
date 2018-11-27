@@ -34,7 +34,7 @@ The following details new techniques encountered in **loop_all.scd**:
 
 ### Pbind
 
-Note: [this](http://doc.sccode.org/Tutorials/A-Practical-Guide/PG_01_Introduction.html) is a great guide about Patterns in  (by H. James Harkins)
+Note: [this](http://doc.sccode.org/Tutorials/A-Practical-Guide/PG_01_Introduction.html) is a great guide about Patterns in SC (by H. James Harkins)
 
 * on Line 73 we affiliate our `Pbind` `~sample_player` with the `SynthDef` it will control via `\instrument`
 * Line 74 uses `Pxrand` to randomly choose `Buffer` objects from `~buffers`, allowing us to randomly select a new sample every time `Pbind` triggers a new instance of the `Synth`
