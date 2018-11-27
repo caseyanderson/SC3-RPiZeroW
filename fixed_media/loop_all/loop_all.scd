@@ -14,7 +14,7 @@ TODO:
 */
 
 
-s.options.memSize = 8192 * 4; // adjust multiplier to increase memory
+s.options.memSize = 8192 * 8; // adjust multiplier to increase memory
 
 s.latency= 0.05;
 
@@ -58,11 +58,11 @@ s.waitForBoot{
 
 	// the SynthDef //
 
-	SynthDef(\play, { | amp = 0.0, buf, len, start = 0, trig = 1 |
+	SynthDef(\play, { | amp = 0.0, buf, len, trig = 1 |
 		var env, sig;
 
 		env = EnvGen.kr( Env.linen( 0.0, len, 0.01), trig,  doneAction: 2 );
-		sig = PlayBuf.ar(1, buf, BufRateScale.kr( buf ), startPos: (start * BufFrames.kr(buf)), loop: 1) * env;
+		sig = PlayBuf.ar(1, buf, BufRateScale.kr( buf ), loop: 0) * env;
 		Out.ar(0, sig);
 }).add;
 
@@ -73,13 +73,10 @@ s.waitForBoot{
 	    \instrument, \play,
 			\buf, Pxrand(~buffers, inf),
 			\len, Pfunc { |e|
-	      var dur, bDur, rDiv;
-	      bDur = e[\buf].duration;
-	      rDiv = rrand(20, 30); // (2, 10), (6, 15), (20, 30)
-	      dur = bDur / rDiv;
+	      var dur;
+	      dur = e[\buf].duration;
 	    },
-	    \start, Pwhite(0.0, 1.0, inf),
-			\delta, Pkey(\len) + Pwhite( 2, 10, inf)
+			\delta, Pkey(\len)
 		);
 
 

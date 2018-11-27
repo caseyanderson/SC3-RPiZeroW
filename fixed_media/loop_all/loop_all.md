@@ -32,9 +32,16 @@ The following details new techniques encountered in **loop_all.scd**:
 * our SynthDef is on Line 57 and is basically the same as **loop_one.scd** (though here we set `loop` to 0 or False)
 
 
-### Pbind
+### Pbind (loop_all.scd)
 
-Note: The following draws on [this](http://doc.sccode.org/Tutorials/A-Practical-Guide/PG_01_Introduction.html) great guide by H. James Harkins
+Note: [this](http://doc.sccode.org/Tutorials/A-Practical-Guide/PG_01_Introduction.html) is a great guide about Patterns in  (by H. James Harkins)
+
+* on Line 73 we affiliate our `Pbind` `~sample_player` with the `SynthDef` it will control via `\instrument`
+* Line 74 uses `Pxrand` to randomly choose `Buffer` objects from `~buffers`, allowing us to randomly select a new sample every time `Pbind` triggers a new instance of the `Synth`
+* Line 75 uses a `Pfunc` to get the duration (in seconds) of whichever sample is randomly selected by `Pxrand` (in the previous line) and sets the duration of the `Env` to that value
+* Line 79 sets `\delta` to the duration of the chosen sample, which effectively means that a new sample will not begin playing until the previous one is finished
+
+
 ### running the file
 
 1. change directories into the `supercolliderStandaloneRPI1`: `cd supercolliderStandaloneRPI1/`
