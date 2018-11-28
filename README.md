@@ -23,12 +23,12 @@ Note: in many cases these examples will also work on the Raspberry Pi 3 Model B+
 
 ## Table of Contents
 * fixed media
-  * [loop_one](loop_one.md): loop one sound file forever
-  * [loop_all](loop_all.md): loop all sound files in a directory forever
+  * [loop_one](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/fixed_media/loop_one/loop_one.md): loop one sound file forever
+  * [loop_all](https://github.com/caseyanderson/SC3-RPiZeroW/tree/master/fixed_media/loop_all): loop all sound files in a directory forever
 * OSC
-  * [listener](listener.md): basic OSC communication
+  * [listener](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/OSC/listener/listener.md): basic OSC communication
   * control synth: control a synth on a different computer
 * GPIO
-  * [digital input](digital_input.md): trigger synth creation & playback via Button press (or similar)
+  * [digital input](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/GPIO/digital_input/digital_input.md): trigger synth creation & playback via Button press (or similar)
   * analog input: control volume of synth via analog sensor input (SPI ADC)
-  * [analog+digital](analog+digital.md): trigger synth creation and playback via Button press, control LFO with Analog Sensor (SPI ADC)
+  * analog+digital: trigger synth creation and playback via Button press, control LFO with Analog Sensor (SPI ADC)
