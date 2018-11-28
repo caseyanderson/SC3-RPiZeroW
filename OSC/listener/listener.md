@@ -60,6 +60,21 @@ In the above example I define a `NetAddr`, or a destination computer on the netw
 2. run the SC file (on your laptop)
 3. run the Python file (on your RPi): `python3 send_osc.py --ip "LAPTOPIPADDRESS"`
 
+If everything worked properly one should see something like the following in the SC post window:
+
+```supercollider
+[ /control, 0.39507311582565 ]
+[ /control, 0.070989534258842 ]
+[ /control, 0.59285795688629 ]
+[ /control, 0.27045303583145 ]
+[ /control, 0.6490324139595 ]
+[ /control, 0.99734354019165 ]
+[ /control, 0.6361175775528 ]
+[ /control, 0.43457522988319 ]
+[ /control, 0.026228973641992 ]
+[ /control, 0.58365857601166 ]
+```
+
 Note the following:
 * we use `argparse` here to both set defaults as well as provide a command line interface. In this case the arguments are `--ip`, with a default of `127.0.0.1`, and `--port`, with a default of `57120`. If one is sending to a **different** computer one would need to provide that computer's `IP Address` like so: `python3 send_osc.py --ip "IPADDRESS"`
 * we create a `upd_client` object, store it at `client`, and then pass the `ip` and `port` for our message destination to it
