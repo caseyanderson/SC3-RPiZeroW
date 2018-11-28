@@ -30,7 +30,7 @@ OSCdef(\listenerResponder, { | msg, time, addr, recvPort |
 }, '/control');
 ```
 
-Above is the basic format for an `OSCdef` (identical to [receiver_listener.scd](OSC/listener/receiver_listener.scd)). Note the following:
+Above is the basic format for an `OSCdef` (identical to [receiver_listener.scd](receiver_listener.scd)). Note the following:
 
 * Similar to a `SynthDef`, the first important piece of information we need to give to SC is the name of this `OSCdef`, which must be prepended with a `\`. In this example the name, or definition on the server, of the OSCdef is `\listenerResponder`
 * The name of the `OSCdef` is followed by a comma and then a `function block` (remember, anything between `{...}` is a function and we often refer to a complete function as a `block`) which defines what this particular `OSCdef` does when it receives a message. This structure still closely resembles the structure of a `SynthDef`
