@@ -24,14 +24,14 @@ OSCdef(\listener, { | msg |
 	switch( msg[1],
 			'play', {
 				var val;
-				val = msg[3].linlin(0.0, 1.0, 0.1, 10);
+				val = msg[3].linlin(0.0, 1.0, 0.1, 15);
 				("wobble is " + val).postln;
 				~sens1.set(val);
 				Synth( \sin, [ \amp, 0.8, \dur, 10, \trig, 1, \wobble, ~sens1.asMap ]);
 			},
 			'wobble', {
 				var val;
-				val = msg[2].linlin(0.0, 1.0, 0.1, 10);
+				val = msg[2].linlin(0.0, 1.0, 0.01, 10);
 				~sens1.set(val);
 		});
 }, '/control');
