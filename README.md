@@ -10,7 +10,7 @@ This repo assumes that readers are:
 
 Note: in many cases these examples will also work on the Raspberry Pi 3 Model B+ with the following caveats:
 * readers must have built supercolliderStandaloneRPI2 as described [here](https://github.com/redFrik/supercolliderStandaloneRPI2)
-* lines referencing supercolliderStandaloneRPI1 are edited to reference supercolliderStandaloneRPI2
+* lines referencing `supercolliderStandaloneRPI1` are edited to reference `supercolliderStandaloneRPI2`
 
 
 ## Materials
