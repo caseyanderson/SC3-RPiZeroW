@@ -51,11 +51,16 @@ In the above example I define a `NetAddr`, or a destination computer on the netw
 
 ### send_osc.py
 
-`OSC` is available for a wide range of applications and languages. If one needs to trigger an `OSC` message from a button press, for example, one could do that in `Python` via the `python-osc` module. An example of this can be seen at [send_osc.py](OSC/listener/send_osc.py).
+`OSC` is available for a wide range of applications and languages. If one needs to trigger an `OSC` message from a button press, for example, one could do that in `Python` via the `python-osc` module. An example of sending messages from Python to SC can be seen at [send_osc.py](OSC/listener/send_osc.py).
 
 
+#### run the example
+
+1. make both files executable: `sudo chmod +x send_osc.py receiver_listener.scd`
+2. run the SC file (on your laptop)
+3. run the Python file (on your RPi): `python3 send_osc.py --ip "LAPTOPIPADDRESS"`
 
 Note the following:
 * we use `argparse` here to both set defaults as well as provide a command line interface. In this case the arguments are `--ip`, with a default of `127.0.0.1`, and `--port`, with a default of `57120`. If one is sending to a **different** computer one would need to provide that computer's `IP Address` like so: `python3 send_osc.py --ip "IPADDRESS"`
 * we create a `upd_client` object, store it at `client`, and then pass the `ip` and `port` for our message destination to it
-* finally, a `for` loop is used to send ten random numbers to the destination.
+* finally, a `for` loop is used to send ten random numbers to the destination
