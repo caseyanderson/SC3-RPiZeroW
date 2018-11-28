@@ -32,7 +32,7 @@ If everything worked properly you should be able to trigger a new instance of a 
 
 ### trigSynthDtrm.scd
 
-`trigSynthDtrm.scd` can be found [here](GPIO/digital_input/trigSynthDtrm.scd). Some quick notes about new techniques from this file:
+`trigSynthDtrm.scd` can be found [here](trigSynthDtrm.scd). Some quick notes about new techniques from this file:
 
 * the `SynthDef` `\sin` a uses a deterministic envelope (`Env.linen`) which will clean itself up when complete. This enables us to send an arbitrary amount of triggers to create an arbitrary amount of `Synth`s (limited only by the memory of our laptop [or RPi])
 * `IRand` is a `Ugen` that returns random `integers`, within a range, and is here used to randomly play different partials of a fundamental pitch (the latter is set by `freq`)
@@ -41,7 +41,7 @@ If everything worked properly you should be able to trigger a new instance of a 
 
 ### trigSynthDtrm.py
 
-`trigSynthDtrm.py` can be found [here](GPIO/digital_input/trigSynthDtrm.py). Some quick notes about new techniques from this file:
+`trigSynthDtrm.py` can be found [here](trigSynthDtrm.py). Some quick notes about new techniques from this file:
 
 * we have an additional argument: `--pin` is used to set the GPIO pin for the button. it defaults to `G16`, though here I am using `G13`
 * the button interface is handled via `gpiozero`. We create a button object and then check its value before entering the loop. The assumption is that it will be `False` most of the time
