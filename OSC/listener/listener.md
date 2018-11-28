@@ -46,7 +46,7 @@ Above is the basic format for an `OSCdef` (identical to [receiver_listener.scd](
 ~x.sendMsg('/control', 'hello!');
 ```
 
-In the above example I define a NetAddr, or a destination computer on the network, and then send a message to it. As I have it above, the full message will be: `[ /control, hello! ]` which will be sent to any destination on the same computer (`127.0.0.1` is internal to the device sending the message) listening for messages that begin with the key `/control`.
+In the above example I define a `NetAddr`, or a destination computer on the network, and then send a message to it. As I have it above, the full message will be: `[ /control, hello! ]` which will be sent to any destination on the same computer (`127.0.0.1` is internal to the device sending the message) listening for messages that begin with the `/control`.
 
 
 ### send_osc.py
@@ -56,6 +56,6 @@ In the above example I define a NetAddr, or a destination computer on the networ
 
 
 Note the following:
-* we use `argparse` here to both set defaults as well as provide a command line interface. In this case the arguments are `--ip`, with a default of `127.0.0.1`, and `--port`, with a default of `57120`. If one is sending to a **different** computer one would need to provide that computer's `IP Address`.
+* we use `argparse` here to both set defaults as well as provide a command line interface. In this case the arguments are `--ip`, with a default of `127.0.0.1`, and `--port`, with a default of `57120`. If one is sending to a **different** computer one would need to provide that computer's `IP Address` like so: `python3 send_osc.py --ip "IPADDRESS"`
 * we create a `upd_client` object, store it at `client`, and then pass the `ip` and `port` for our message destination to it
 * finally, a `for` loop is used to send ten random numbers to the destination.
