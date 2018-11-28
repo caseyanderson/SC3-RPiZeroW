@@ -46,7 +46,7 @@ Above is the basic format for an `OSCdef` (identical to [receiver_listener.scd](
 ~x.sendMsg('/control', 'hello!');
 ```
 
-In the above example I define a `NetAddr`, or a destination computer on the network, and then send a message to it. As I have it above, the full message will be: `[ /control, hello! ]` which will be sent to any destination on the same computer (`127.0.0.1` is internal to the device sending the message) listening for messages that begin with the `/control`.
+In the above example I define a `NetAddr`, or a destination computer on the network, and then send a message to it. As I have it above the full message will be: `[ /control, hello! ]` which will be sent to any destination on the same computer (`127.0.0.1` is internal network on the device sending the message) listening for messages that begin with the `/control`.
 
 
 ### send_osc.py
