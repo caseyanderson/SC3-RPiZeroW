@@ -24,9 +24,10 @@ s.sync;
 
 OSCdef(\sinResponder, { | msg |
 	switch( msg[1],
-		'vol', {
-			("vol "++msg[2]).postln;
-				x.set(\amp, msg[2].asFloat);
+		'freq', {
+		var val = msg[2].linlin(0.0, 1.0, 50, 1000)
+			("freq "++val).postln;
+				x.set(\freq, val);
 		});
 }, '/control');
 

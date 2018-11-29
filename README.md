@@ -19,9 +19,13 @@ Note: in many cases these examples will also work on the Raspberry Pi 3 Model B+
 * [USB OTG Host Cable - MicroB OTG male to A female](https://www.adafruit.com/product/1099) or similar
 * [USB Audio Adapter](https://www.adafruit.com/product/1475) or similar
 * [SparkFun PiWedge](https://www.sparkfun.com/products/13717) or [Adafruit Pi Cobbler](https://www.adafruit.com/product/2028) (for GPIO)
+* [MCP3008](https://www.adafruit.com/product/856) 8-Channel 10-Bit ADC With SPI Interface (for GPIO)
 
 
 ## Table of Contents
+
+Although these are meant to be standalone examples, the table of contents implies a loose order, moving from least complex to most complex
+
 * fixed media
   * [loop_one](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/fixed_media/loop_one/loop_one.md): loop one sound file forever
   * [loop_all](https://github.com/caseyanderson/SC3-RPiZeroW/tree/master/fixed_media/loop_all): loop all sound files in a directory forever
