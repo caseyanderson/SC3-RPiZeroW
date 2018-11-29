@@ -47,3 +47,5 @@ If everything worked properly you should be able to trigger a new instance of a 
 * the button interface is handled via `gpiozero`. We create a button object and then check its value before entering a `while` loop. The assumption is that the `button.value` will be `False` (not pressed) most of the time
 * the loop handles two tasks: 1. check `button.value` and check to see if `button.value` is different than the previous state (stored at `prev_val`). If `button.value` is `True` **and** is different than the `prev_val` a button press is detected, which sends a "play" message to `trigSynthDtrm.scd`
 * the last line of the `while` loop crucially contains a `sleep` statement: `sleep(0.05)`, causing the program to pause for an extremely short amount of time, preventing memory issues and randomly missed button presses
+
+Note: our `client` could be the same RPi, in which case the `IP` would be `127.0.0.1` (in fact, that's the default for `--ip`), or a different device on the same WIFI network

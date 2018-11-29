@@ -62,4 +62,6 @@ If everything worked properly you should be able to change the frequency of an L
 * we create a `sensor` object on line 32 and tell it which `MCP3008` channel to use
 * at the top of our `while` loop we create an `osc_message_builder` object, give it a label (`/control`) to begin every message with.
 * next we build the rest of our message, argument by argument, with two `msg.add_arg`s: one for "wobble" and one for the `sensor_value`. Our full message will look something like `[/control, wobble, 0.2]`
-* in the next two lines we build the msg, with `msg.build()`, and send it to our `client` with `client.send(msg)`. Note: our `client` could be the same RPi, in which case the `IP` would be `127.0.0.1` (in fact, that's the default for `--ip`), or a different device on the same WIFI network
+* in the next two lines we build the msg, with `msg.build()`, and send it to our `client` with `client.send(msg)`.
+
+Note: our `client` could be the same RPi, in which case the `IP` would be `127.0.0.1` (in fact, that's the default for `--ip`), or a different device on the same WIFI network
