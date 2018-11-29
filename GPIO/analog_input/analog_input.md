@@ -19,7 +19,7 @@
 * enable `SPI`:
   * `sudo raspi-config`
   * select `Interfacing Options`, hit ENTER
-  * select `SPI`. hit ENTER
+  * select `SPI`, hit ENTER
   * select `Yes`, hit ENTER
   * select `OK`, hit ENTER
   * select `Finish`, hit ENTER
@@ -50,16 +50,16 @@ If everything worked properly you should be able to change the frequency of an L
 
 ### analog_input.scd
 
-`analog_input.scd` can be found [here](analog_input.scd). Some quick notes about new techniques from this file:
+`analog_input.scd` can be found [here](analog_input.scd). A quick note about a new techniques from this file:
 
-* in the `\sinResponder` we scale the wobble frequency number from its original range (0.0 to 1.0) to the desired range (0.1 to 10) with `.linlin`, an object in SC which can convert numbers from one range to another. We store the scaled value to `val` for use elsewhere.
+* in the `\sinResponder` we scale the `wobble` frequency number from its original range (`0.0` to `1.0`) to the desired range (`0.1` to `10`) with `.linlin`, an object in SC which can convert numbers from one range to another. We store the scaled value to `val` for use elsewhere.
 
 
 ### analog_input.py
 
 `analog_input.py` can be found [here](analog_input.py). Some quick notes about new techniques from this file:
 
-* we create a `sensor` object on line 32 and tell it which MCP3008 channel to use
-* at the top of our `while` loop we create an `osc_message_builder` object, give it a label (`"/control"`) to begin every message with.
-* next we build the rest of our message, argument by argument, with two `msg.add_arg`s: one for "wobble" and one for the `sensor_value`
-* in the next two lines we build the msg, with `msg.build()`, and send it to our `client` with `client.send(msg)`. Note: our client could be the same RPi, in which case the IP would be `127.0.0.1` (in fact, that's the default for `--ip`), or a different device on the same WIFI network.
+* we create a `sensor` object on line 32 and tell it which `MCP3008` channel to use
+* at the top of our `while` loop we create an `osc_message_builder` object, give it a label (`/control`) to begin every message with.
+* next we build the rest of our message, argument by argument, with two `msg.add_arg`s: one for "wobble" and one for the `sensor_value`. Our full message will look something like `[/control, wobble, 0.2]`
+* in the next two lines we build the msg, with `msg.build()`, and send it to our `client` with `client.send(msg)`. Note: our `client` could be the same RPi, in which case the `IP` would be `127.0.0.1` (in fact, that's the default for `--ip`), or a different device on the same WIFI network
