@@ -25,8 +25,6 @@ Note: in many cases these examples will also work on the Raspberry Pi 3 Model B+
 
 ## Table of Contents
 
-Note: although these are meant to be standalone examples the table of contents implies a loose order, moving from least complex (fixed_media) to most complex (currently GPIO).
-
 * fixed media
   * [loop_one](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/fixed_media/01_loop_one/loop_one.md): loop one sound file forever
   * [loop_all](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/fixed_media/02_loop_all/loop_all.md): loop all sound files in a directory forever
