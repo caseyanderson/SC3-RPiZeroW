@@ -34,6 +34,6 @@ Note: although these are meant to be standalone examples the table of contents i
   * [listener](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/OSC/listener/listener.md): basic OSC communication
   * control synth: control a synth on a different computer
 * GPIO
-  * [digital input](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/GPIO/digital_input/digital_input.md): trigger synth creation & playback via Button press (or similar)
-  * analog input: control LFO with analog sensor input (SPI ADC)
-  * analog+digital: trigger synth creation and playback via Button press, control LFO with analog sensor input (SPI ADC)
+  * [digital_input](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/GPIO/digital_input/digital_input.md): trigger synth creation & playback via Button press (or similar)
+  * [analog_input](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/GPIO/analog_input/analog_input.md): control LFO with analog sensor input (SPI ADC)
+  * analog+digital_input: trigger synth creation and playback via Button press, control LFO with analog sensor input (SPI ADC)
