@@ -3,7 +3,7 @@
 '''
 Control volume of a synth via analog sensor (SPI ADC)
 
-To Run: python3 analog_input_GPIO.py --ip "127.0.0.1" --port 57120 --chn 0
+To Run: python3 analog_input.py --ip "127.0.0.1" --port 57120 --chn 0
 '''
 
 from pythonosc import osc_message_builder
