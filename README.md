@@ -34,5 +34,5 @@ Although these are meant to be standalone examples, the table of contents implie
   * control synth: control a synth on a different computer
 * GPIO
   * [digital input](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/GPIO/digital_input/digital_input.md): trigger synth creation & playback via Button press (or similar)
-  * analog input: control volume of synth via analog sensor input (SPI ADC)
-  * analog+digital: trigger synth creation and playback via Button press, control LFO with Analog Sensor (SPI ADC)
+  * analog input: control LFO with analog sensor input (SPI ADC)
+  * analog+digital: trigger synth creation and playback via Button press, control LFO with analog sensor input (SPI ADC)
