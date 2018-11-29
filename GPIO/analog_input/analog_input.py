@@ -42,4 +42,4 @@ if __name__ == '__main__':
             sleep(0.05)
     except KeyboardInterrupt:
         print("interrupted!")
-        button.close()
+        sensor.close()

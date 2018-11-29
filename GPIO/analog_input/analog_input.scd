@@ -6,10 +6,10 @@ s.latency= 0.05;
 
 s.waitForBoot{
 
-SynthDef( \sin, { | amp = 0.0, freq = 100, out = 0, trig = 0 |
+SynthDef( \sin, { | amp = 0.0, freq = 100, out = 0, partial = 1, trig = 0, wobble = 0 |
 	var env, sig, finalSig;
 	env = EnvGen.kr( Env.asr( 0.001, 0.9, 0.1 ), trig, doneAction: 2 );
-	sig = SinOsc.ar( freq, 0.0, amp );
+		sig = SinOsc.ar( freq, SinOsc.kr(wobble), amp );
 	finalSig = sig * env * 0.6;
 	Out.ar( out, Pan2.ar(finalSig) );
 }).add;
@@ -25,9 +25,9 @@ s.sync;
 OSCdef(\sinResponder, { | msg |
 	switch( msg[1],
 		'freq', {
-		var val = msg[2].linlin(0.0, 1.0, 50, 1000)
-			("freq "++val).postln;
-				x.set(\freq, val);
+		var val = msg[2].linlin(0.0, 1.0, 0.1, 10);
+			("wobble "++val).postln;
+				x.set(\wobble, val);
 		});
 }, '/control');
 
