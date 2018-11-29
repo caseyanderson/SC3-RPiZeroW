@@ -24,7 +24,7 @@ s.sync;
 
 OSCdef(\sinResponder, { | msg |
 	switch( msg[1],
-		'freq', {
+		'wobble', {
 		var val = msg[2].linlin(0.0, 1.0, 0.1, 10);
 			("wobble "++val).postln;
 				x.set(\wobble, val);

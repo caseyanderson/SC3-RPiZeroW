@@ -43,7 +43,7 @@ If everything worked properly you should be able to trigger a new instance of a 
 
 `trigSynthDtrm.py` can be found [here](trigSynthDtrm.py). Some quick notes about new techniques from this file:
 
-* we have an additional argument: `--pin` is used to set the GPIO pin for the button. it defaults to `G16`, though here I am using `G13`
-* the button interface is handled via `gpiozero`. We create a button object and then check its value before entering the loop. The assumption is that it will be `False` most of the time
-* the loop handles two tasks: 1. check the current state of the button, and check to see if the current state is different than the previous state (stored at `prev_val`). If the current state of the button is `True` **and** is different than the `prev_val` we detect a button press and send a "play" message to `trigSynthDtrm.scd`
-* the last line of the while loop crucially contains a `sleep` statement: `sleep(0.05)`, causing the program to pause for an extremely short amount of time, preventing memory issues and randomly missed button presses
+* we have an additional argument: `--pin` is used to set the `GPIO` pin for the button. It defaults to `G16`, though here I am using `G13`
+* the button interface is handled via `gpiozero`. We create a button object and then check its value before entering a `while` loop. The assumption is that the `button.value` will be `False` (not pressed) most of the time
+* the loop handles two tasks: 1. check `button.value` and check to see if `button.value` is different than the previous state (stored at `prev_val`). If `button.value` is `True` **and** is different than the `prev_val` a button press is detected, which sends a "play" message to `trigSynthDtrm.scd`
+* the last line of the `while` loop crucially contains a `sleep` statement: `sleep(0.05)`, causing the program to pause for an extremely short amount of time, preventing memory issues and randomly missed button presses
