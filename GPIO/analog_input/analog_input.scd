@@ -9,14 +9,14 @@ s.waitForBoot{
 SynthDef( \sin, { | amp = 0.0, freq = 100, out = 0, trig = 0 |
 	var env, sig, finalSig;
 	env = EnvGen.kr( Env.asr( 0.001, 0.9, 0.1 ), trig, doneAction: 2 );
-	sig = SinOsc.ar( freq * IRand( 1, 6), 0.0, amp );
+	sig = SinOsc.ar( freq, 0.0, amp );
 	finalSig = sig * env * 0.6;
 	Out.ar( out, Pan2.ar(finalSig) );
 }).add;
 
 s.sync;
 
-x = Synth( \sin, [ \amp, 0.3, \trig, 1]);
+x = Synth( \sin, [ \amp, 0.9, \trig, 1, \freq, 200]);
 
 s.sync;
 
