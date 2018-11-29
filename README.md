@@ -28,12 +28,12 @@ Note: in many cases these examples will also work on the Raspberry Pi 3 Model B+
 Note: although these are meant to be standalone examples the table of contents implies a loose order, moving from least complex (fixed_media) to most complex (currently GPIO).
 
 * fixed media
-  * [loop_one](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/fixed_media/loop_one/loop_one.md): loop one sound file forever
-  * [loop_all](https://github.com/caseyanderson/SC3-RPiZeroW/tree/master/fixed_media/loop_all): loop all sound files in a directory forever
+  * [loop_one](): loop one sound file forever
+  * [loop_all](): loop all sound files in a directory forever
 * OSC
-  * [listener](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/OSC/listener/listener.md): basic OSC communication
+  * [listener](): basic OSC communication
   * control synth: control a synth on a different computer
 * GPIO
-  * [digital_input](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/GPIO/digital_input/digital_input.md): trigger synth creation & playback via Button press (or similar)
-  * [analog_input](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/GPIO/analog_input/analog_input.md): control LFO with analog sensor input (SPI ADC)
-  * [analog+digital_input](https://github.com/caseyanderson/SC3-RPiZeroW/blob/master/GPIO/analog%2Bdigital_input/analog%2Bdigital_input.md): trigger synth creation and playback via Button press, control LFO with analog sensor input (SPI ADC)
+  * [digital_input](): trigger synth creation & playback via Button press (or similar)
+  * [analog_input](): control LFO with analog sensor input (SPI ADC)
+  * [analog+digital_input](): trigger synth creation and playback via Button press, control LFO with analog sensor input (SPI ADC)
