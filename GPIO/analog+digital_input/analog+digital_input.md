@@ -62,6 +62,6 @@ If everything worked properly you should be able to trigger synth creation and p
 
 `analog+digital_input.py` can be found [here](analog+digital_input.py). One quick note about this file:
 
-* our `while` loop formats the OSC message based on `button.value`. More specifically, if a button press is detected (`button.value == True and button.value != prev_val`) trigger synth playback and pass `sensor.value` to the `\listener`. If a button press is not detected (`button.value == False`) only send `sensor.value` to the `\listener`. In other words, whether we make a new synth instance or not we control the `wobble` time of any sounding or future synth with `sensor.value`.
+* our `while` loop formats the OSC message based on `button.value`. More specifically, if a button press is detected (`button.value == True and button.value != prev_val`) trigger synth playback and pass `sensor.value` to the `\listener`. If a button press is not detected (`button.value == False`) only send `sensor.value` to the `\listener`. Whether we make a new synth instance or not we control the `wobble` time of any sounding or future synth via `sensor.value`
 
 Note: our `client` could be the same RPi, in which case the `IP` would be `127.0.0.1` (in fact, that's the default for `--ip`), or a different device on the same WIFI network
