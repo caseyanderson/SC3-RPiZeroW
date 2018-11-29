@@ -6,6 +6,7 @@ a collection of SuperCollider3 applications/examples for the Raspberry Pi Zero W
 This repo assumes that readers are:
 * prototyping on a laptop
 * deploying to a Raspberry Pi Zero W
+* have installed Python3 and pip3
 * have built supercolliderStandaloneRPI1 as described [here](https://github.com/redFrik/supercolliderStandaloneRPI1)
 
 Note: in many cases these examples will also work on the Raspberry Pi 3 Model B+ with the following caveats:
