@@ -32,9 +32,9 @@ The long-term goal is to have the **RPi** automatically launch this **SC** file 
 ```sh
 #!/bin/bash
 
-THE_SCRIPT="/home/pi/SC3-RPiZeroW/fixed_media/loop_one/loop_one.scd"
-THE_DIR="/home/pi/uSAMPLES"
-THE_FILE="akonting.aif"
+THE_SCRIPT="/home/pi/SC3-RPiZeroW/01_fixed_media/01_loop_one/loop_one.scd"
+THE_DIR="/home/pi/haiti_recordings"
+THE_FILE="haiti_crickets.wav"
 
 THE_PATH=$THE_DIR/$THE_FILE
 
@@ -44,5 +44,5 @@ THE_PATH=$THE_DIR/$THE_FILE
 
 2. make the file executable: `sudo chmod +x loop_one.sh`
 3. open up `cron`: `crontab -e`
-4. scroll to the bottom of the file and add the following: `@reboot cd /home/pi/supercolliderStandaloneRPI2 && xvfb-run sh /home/pi/SC3-RPiZeroW/fixed_media/loop_one/loop_one.sh`
+4. scroll to the bottom of the file and add the following: `@reboot cd /home/pi/supercolliderStandaloneRPI1 && xvfb-run sh /home/pi/SC3-RPiZeroW/01_fixed_media/01_loop_one/loop_one.sh`
 5. reboot to hear `loop_one.sh` start everything up
